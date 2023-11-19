@@ -32,8 +32,10 @@ module.exports.create = async function (req, res) {
             });
         }
 
-
-        const baseUrl = `https://localhost:3000`
+        //for development
+        // const baseUrl = `https://localhost:3000`
+        //for deployment
+        const baseUrl=`https://pollig-api.onrender.com`
 
         const option = await Option.create({ 'text': text, 'question_id': question._id });
         option.link_to_vote = `${baseUrl}/api/v1/options/${option.id}/add_vote`;
